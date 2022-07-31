@@ -1,0 +1,10 @@
+/* Write your CSS here */
+.button1 {
+  width: 100px;
+  margin: 20px;
+  border: 1px solid rebeccapurple;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  outline: none;
+}
