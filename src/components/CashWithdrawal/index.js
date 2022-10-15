@@ -1,46 +1,51 @@
-// Write your code
+// Write your code here
 import {Component} from 'react'
 
 import DenominationItem from '../DenominationItem'
-
 import './index.css'
 
 class CashWithdrawal extends Component {
-  state = {balance: 2000}
-
-  onIncrement = value => {
-    this.setState(prevState => ({
-      balance: prevState.balance - value,
-    }))
-    const {balance, btnvalue} = this.state
-    console.log(balance, btnvalue)
+  state = {
+    balance: 2000,
   }
 
+  updateBalance = value => {
+    this.setState(prevState => ({balance: prevState.balance - value}))
+  }
+
+  getFirstCharOfName = name => name.slice(0, 2)
+
   render() {
-    const {denominationsList} = this.props
     const {balance} = this.state
+    const {denominationsList} = this.props
+    const name = 'Sarah Williams'
+    const initial = this.getFirstCharOfName(name)
     return (
-      <div className="mC1">
-        <div className="c1">
-          <p className="p1">s</p>
-          <h1>Sarah Williams</h1>
-        </div>
-        <div className="c3">
-          <p>your balance</p>
-          <div className="c2">
-            <p>{balance}</p>
-            <p>In Rupees</p>
+      <div className="cash-withdrawal-app-container">
+        <div className="cash-withdrawal-container">
+          <div className="user-details-container">
+            <div className="initial-container">
+              <p className="initial">{initial}</p>
+            </div>
+            <p className="username">{name}</p>
           </div>
-        </div>
-        <div>
-          <p>Withdraw</p>
-          <p>CHOOSE SUM (IN RUPEES)</p>
-          <ul className="list1">
-            {denominationsList.map(each => (
+
+          <div className="balance-container">
+            <p className="your-balance">Your Balance</p>
+            <p className="balance-amount">
+              {balance}
+              <br />
+              <span className="currency">In Rupees</span>
+            </p>
+          </div>
+          <p className="withdraw">Withdraw</p>
+          <p className="choose-sum">CHOOSE SUM (IN RUPEES)</p>
+          <ul className="denominations-list">
+            {denominationsList.map(eachDenomination => (
               <DenominationItem
-                cashlist={each}
-                key={each.id}
-                onIncrement={this.onIncrement}
+                key={eachDenomination.id}
+                denominationDetails={eachDenomination}
+                updateBalance={this.updateBalance}
               />
             ))}
           </ul>
@@ -49,5 +54,4 @@ class CashWithdrawal extends Component {
     )
   }
 }
-
 export default CashWithdrawal
