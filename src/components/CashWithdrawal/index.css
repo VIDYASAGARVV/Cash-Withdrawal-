@@ -1,41 +1,130 @@
 /* Write your CSS here */
-.c1 {
+.cash-withdrawal-app-container {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cash-withdrawal-container {
+  background-color: #150b3e;
+  width: 80%;
+  border-radius: 16px;
+  padding-top: 24px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-right: 18px;
+  padding-bottom: 8px;
+  max-width: 350px;
+}
+@media screen and (min-width: 768px) {
+  .cash-withdrawal-container {
+    width: 55%;
+    padding-top: 48px;
+    padding-left: 36px;
+    padding-bottom: 16px;
+    padding-right: 36px;
+    max-width: 422px;
+  }
+}
+.user-details-container {
+  display: flex;
+
+  justify-content: flex-start;
+}
+.initial-container {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #c7d2fe;
+  height: 48px;
+  width: 48px;
+  border-radius: 24px;
 }
-.p1 {
-  border-radius: 25px;
-  background-color: #d4d2db;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  margin: 10px;
-
-  color: chocolate;
+.initial {
+  color: #7c3aed;
+  font-family: 'Roboto';
+  font-size: 14px;
 }
-
-.c2 {
-  display: flex;
-  flex-direction: column;
+.username {
+  color: #c7d2fe;
+  font-family: 'Roboto';
+  font-size: 16px;
+  margin-left: 8px;
 }
-.c3 {
+.balance-container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  margin-top: 24px;
 }
-.mC1 {
-  width: 40%;
-  background-color: #150b3e;
-  height: 100vh;
-  margin: 30px;
-  color: aliceblue;
-  padding: 30px;
+.your-balance {
+  color: #585076;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 4px;
 }
-.list1 {
-  list-style: none;
+@media screen and (min-width: 768px) {
+  .your-balance {
+    font-size: 20px;
+    margin-top: 8px;
+  }
+}
+.balance-amount {
+  color: #d4d2db;
+  font-family: 'Roboto';
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0;
+}
+@media screen and (min-width: 768px) {
+  .balance-amount {
+    font-size: 32px;
+  }
+}
+.currency {
+  color: #585076;
+  font-size: 12px;
+  font-weight: 500;
+  padding-left: 3px;
+  margin: 0px;
+}
+@media screen and (min-width: 768px) {
+  .currency {
+    font-size: 15px;
+  }
+}
+.withdraw {
+  color: #d4d2db;
+  font-size: 20px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  margin-top: 15px;
+}
+@media screen and (min-width: 768px) {
+  .withdraw {
+    font-size: 24px;
+    margin-top: 24px;
+  }
+}
+.choose-sum {
+  color: #585076;
+  font-family: 'Roboto';
+  font-size: 12px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+@media screen and (min-width: 768px) {
+  .choose-sum {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+}
+.denominations-list {
+  padding-left: 0px;
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
-  width: 70%;
+  justify-content: space-between;
 }
