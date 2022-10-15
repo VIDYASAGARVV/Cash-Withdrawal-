@@ -2,20 +2,21 @@
 import './index.css'
 
 const DenominationItem = props => {
-  const {cashlist, onIncrement} = props
-  const {value} = cashlist
-
-  const changeBalance = () => {
-    onIncrement(value)
+  const {denominationDetails, updateBalance} = props
+  const {value} = denominationDetails
+  const onUpdateBalance = () => {
+    updateBalance(value)
   }
-
   return (
-    <li>
-      <button type="button" className="button1" onClick={changeBalance}>
+    <li className="denomination-item">
+      <button
+        type="button"
+        className="denomination-button"
+        onClick={onUpdateBalance}
+      >
         {value}
       </button>
     </li>
   )
 }
-
 export default DenominationItem
